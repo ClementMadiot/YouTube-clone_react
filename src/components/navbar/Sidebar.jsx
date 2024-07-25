@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { categories } from "../../utils/constants";
 import { Stack } from "@mui/material";
+import { categories } from "../../utils/constants";
 
-const Sidebar = () => {
-  const [active, setActive] = useState("")
+const Sidebar = ({selectedCategory, setSelectedCategory}) => {
+
 
   return (
     <Stack
@@ -15,12 +14,11 @@ const Sidebar = () => {
       }}
     >
       {categories.map((cat, index) => (
-        <button key={index} className={`flex items-center justify-start xs:m-[10px] my-2 font-bold capitalize cursor-pointer outline-none border-none px-4 py-2 transition-colors rounded-3xl hover:bg-red ${active === cat.name ? 'bg-red' : ""} `}
-        onClick={() => setActive(cat.name)}
-
+        <button key={index} className={`flex items-center justify-start xs:m-[10px] my-2 font-bold capitalize cursor-pointer outline-none border-none px-4 py-2 transition-colors rounded-3xl hover:bg-red category-btn ${cat.name === selectedCategory ? 'bg-red' : ''} `}
+        onClick={() => setSelectedCategory(cat.name)}
         >
-          <span className={`${active === cat.name ? '' : "opacity-80"} mr-4 hover:text-white `}>{cat.icon}</span>
-          <span className={`${active === cat.name ? '' : " opacity-80"} `}>{cat.name}</span>
+          <span className={`mr-4 ${cat.name === selectedCategory ? 'text-white' : 'text-red'}`}>{cat.icon}</span>
+          <span className={`${cat.name === selectedCategory ? "" : "opacity-80"}`}>{cat.name}</span>
         </button>
       ))}
     </Stack>

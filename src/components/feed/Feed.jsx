@@ -1,9 +1,16 @@
-// import { useEffect, useState } from "react";
-// @mui import
+import { useEffect, useState } from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import {Sidebar, Videos} from "../index";
-// import Videos from "./video/Videos";
+
+import { Sidebar, Videos } from "../index";
+import { fetchFromAPI } from "../../utils/fetchFromAPI";
+
 const Feed = () => {
+  const [selectedCategory, setSelectedCategory] = useState("New");
+
+  useEffect(() => {
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`);
+  }, [selectedCategory]);
+
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
@@ -13,16 +20,19 @@ const Feed = () => {
           px: { sx: 0, md: 2 },
         }}
       >
-        <Sidebar/>
+        <Sidebar
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
         <Typography className="hidden md:block mt-6 text-white" variant="body2">
           Copyright © 2024 Web Design
         </Typography>
       </Box>
-      <Box p={2} className='h-[90vh] overflow-y-auto flex-1'>
-        <Typography variant="h4" fontWeight="bold" mb={2 }>
-        New  <span className="text-[#F31503]">videos</span>
+      <Box p={2} className="h-[90vh] overflow-y-auto flex-1">
+        <Typography variant="h4" fontWeight="bold" mb={2}>
+          {selectedCategory} <span className="text-[#F31503]">videos</span>
         </Typography>
-        <Videos videos={[]}/>
+        <Videos videos={[]} />
       </Box>
     </Stack>
   );
