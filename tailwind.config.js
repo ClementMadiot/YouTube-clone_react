@@ -9,9 +9,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#0F0F0F'
+        primary: '#0F0F0F',
+        borderRight: '#3d3d3d',
+        red: '#FC1503',
       }
     },
+    screen:{
+      xs:'900px'
+    }
   },
   plugins: [
     plugin(function ({ addBase, addComponents, addUtilities }) {
