@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import plugin from "tailwindcss/plugin";
+
 export default {
   content: [
     "./index.html",
@@ -12,14 +14,15 @@ export default {
     },
   },
   plugins: [
-    plugin(function ({ addComponents, addUtilities }) {
+    plugin(function ({ addBase, addComponents, addUtilities }) {
+      addBase({});
       addComponents({
         ".h1": {
-          "@apply font-sora font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2":
+          "@apply font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2":
             {},
         },
         ".p": {
-          "@apply sm:text-[18px] text-[14px] uppercase tracking-wider text-center font-code":
+          "@apply sm:text-[18px] text-[14px] uppercase tracking-wider text-center":
             {},
         },
         // color text gradient
