@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import { CardContent } from "@mui/material";
 import plugin from "tailwindcss/plugin";
 
 export default {
@@ -12,6 +13,7 @@ export default {
         primary: '#0F0F0F',
         borderRight: '#3d3d3d',
         red: '#FC1503',
+        cardContent: '#1e1e1e'
       }
     },
     screen:{
