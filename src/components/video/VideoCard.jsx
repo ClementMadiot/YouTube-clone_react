@@ -10,7 +10,7 @@ const VideoCard = ({ video: { id: {videoId}, snippet } }) => {
     <Card className="shadow-none max-w-80 sm:w-[358px] w-full lg:w-80" sx={{ borderRadius: 0 }}>
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
       <CardMedia 
-      image={snippet?.thumbnails?.high?.url}
+      image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
       alt={snippet?.title}
       className="w-80 sm:w-[358px] h-[180px]"
       />
