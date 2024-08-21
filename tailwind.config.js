@@ -33,8 +33,8 @@ export default {
             {},
         },
         // color text gradient
-        ".cyan-text-gradient": {
-          "@apply bg-gradient-to-t from-cyan to-lightBlue bg-clip-text text-transparent":
+        ".linear-gradient": {
+          "@apply bg-gradient-to-r from-fuchsia-500 to-cyan-500":
             {},
         },
       });
