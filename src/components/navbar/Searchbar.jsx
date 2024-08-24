@@ -8,19 +8,19 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
-  const onhandleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (searchTerm) {
       navigate(`/search/${searchTerm}`);
-
+// reset the search input
       setSearchTerm('');
     }
   };
   return (
     <Paper
       component="form"
-      onSubmit={onhandleSubmit}
+      onSubmit={handleSubmit}
       className=" shadow-none border border-[#e3e3e3]"
       sx={{
         borderRadius: 20,

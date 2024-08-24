@@ -12,7 +12,7 @@ module.exports = {
   settings: { react: { version: "18.2" } },
   plugins: ["react-refresh"],
   rules: {
-    "react/jsx-uses-react": "error",  
+    "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/prop-types": "off",
     "react/jsx-no-target-blank": "off",
@@ -20,6 +20,7 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
-    "react/no-unknown-property": ["error", { ignore: ["jsx"] }], 
+    "react/no-unknown-property": ["error", { ignore: ["jsx"] }],
+    "no-unused-vars": "off",
   },
 };
