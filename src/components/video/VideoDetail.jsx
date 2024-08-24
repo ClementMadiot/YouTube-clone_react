@@ -9,12 +9,13 @@ import { Videos } from "../index";
 import { fetchFromAPI } from "../../utils/fetchFromAPI";
 
 const VideoDetail = () => {
-  const [videoDetail, setVideoDetail] = useState(null)
+  const [videoDetail, setVideoDetail] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
-    fetchFromAPI(`videos?part=snippet,statistic&id=${id}`)
-    .then((data) => setVideoDetail(data.item[0]))
+    fetchFromAPI(`videos?part=snippet,statistic&id=${id}`).then((data) =>
+      setVideoDetail(data.item[0])
+    );
   }, [id]);
 
   return (
@@ -24,7 +25,11 @@ const VideoDetail = () => {
         <Box flex={1}>
           {/* wrapp videos on the right side  */}
           <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
-            <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} />
+            <ReactPlayer
+              url={`https://www.youtube.com/watch?v=${id}`}
+              className="!h-[77vh] !w-full"
+              controls
+            />
           </Box>
         </Box>
       </Stack>
