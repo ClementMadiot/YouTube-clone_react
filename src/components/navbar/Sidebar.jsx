@@ -10,15 +10,15 @@ const Sidebar = ({selectedCategory, setSelectedCategory}) => {
       sx={{
         overflowY: "auto",
         height: { sx: "auto", md: "95%" },
-        flexDirection: { md: "column" },
+        flexDirection: { sm: "column" },
       }}
     >
       {categories.map((cat, index) => (
-        <button key={index} className={`flex items-center justify-start xs:m-[10px] my-2 font-bold capitalize cursor-pointer outline-none border-none px-4 py-2 transition-colors rounded-3xl hover:bg-red category-btn ${cat.name === selectedCategory ? 'bg-red' : ''} `}
+        <button key={index} className={`flex items-center justify-center md:justify-start my-2 font-bold capitalize cursor-pointer outline-none border-none px-4 py-1 text-xs md:text-base transition-colors rounded-3xl hover:bg-red category-btn ${cat.name === selectedCategory ? 'bg-red' : ''} `}
         onClick={() => setSelectedCategory(cat.name)}
         >
-          <span className={`mr-4 ${cat.name === selectedCategory ? 'text-white' : 'text-red'}`}>{cat.icon}</span>
-          <span className={`${cat.name === selectedCategory ? "" : "opacity-80"}`}>{cat.name}</span>
+          <span className={`md:mr-4 ${cat.name === selectedCategory ? 'text-white' : 'text-red'}`}>{cat.icon}</span>
+          <span className={` min-w-full md:min-w-fit ${cat.name === selectedCategory ? "" : "opacity-80"}`}>{cat.name}</span>
         </button>
       ))}
     </Stack>
