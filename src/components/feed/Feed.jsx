@@ -26,9 +26,6 @@ const Feed = () => {
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
-        <Typography className="hidden md:block mt-6 text-white" variant="body2">
-          Copyright © 2024 Web Design
-        </Typography>
       </Box>
       <Box p={2} className="h-[90vh] overflow-y-auto flex-1">
         <Typography variant="h4" fontWeight="bold" mb={2}>

@@ -18,6 +18,20 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   },
 }));
 
+const Button = styled(IconButton)(({ theme }) => ({
+  '&.hiver-within': {
+
+  },
+  '&:hover': {
+    // Your desired hover styles here
+    backgroundColor: '#3f3f3f99', 
+    color: '#b5b5b5', // Example: Change text color on hover
+  },
+  '&:active': {
+
+    },
+}));
+
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
@@ -49,9 +63,9 @@ const SearchBar = () => {
       value={searchTerm} 
       onChange={(e) => setSearchTerm(e.target.value)} 
       className="outline-none border-none sm:w-[320px] w-[170px] vsm:w-[200px] placeholder-gray bg-lightBlack text-white" />
-      <IconButton type="submit" sx={{p:'8px 15px', color:'#a0a0a0', background:'#3f3f3f78', borderRadius: '0 21px 21px 0'}}>
+      <Button disableRipple type="submit" sx={{p:'8px 15px', color:'#a0a0a0', background:'#3f3f3f75', borderRadius: '0 21px 21px 0'}}>
       <Search/>
-      </IconButton>
+      </Button>
     </StyledPaper>
   );
 };

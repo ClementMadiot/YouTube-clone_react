@@ -46,7 +46,7 @@ const VideoDetail = () => {
           >
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
-              className="!w-full lg:!h-[67vh] xl:!h-[77vh]"
+              className="react-player"
               controls
             />
             {/* Title */}
@@ -101,7 +101,7 @@ const VideoDetail = () => {
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Videos videos={videos} direction="column" />
+          <Videos videos={videos} direction="column" justifyContent="center" />
         </Box>
       </Stack>
     </Box>
