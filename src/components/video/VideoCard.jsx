@@ -12,7 +12,7 @@ import {
 } from "../../utils/constants";
 
 const VideoCard = ({ video: { id: { videoId }, snippet } }) => (
-  <Card sx={{ width: { xs: '250px', md: "250px", lg:"370px" }, boxShadow: "none", borderRadius: 0, mb: '20px', height: '100%' }}>
+  <Card sx={{  width: { xs: '250px', md: "250px", lg:"370px" }, boxShadow: "none", borderRadius: 0, mb: '20px', height: '100%', backgroundColor: 'transparent' }}>
     <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY` }>
       <CardMedia image={snippet?.thumbnails?.high?.url || demoThumbnailUrl} alt={snippet?.title} 
         sx={{ width: '100%', height: 140 }} 

@@ -14,7 +14,7 @@ const Sidebar = ({selectedCategory, setSelectedCategory}) => {
       }}
     >
       {categories.map((cat, index) => (
-        <button key={index} className={`flex items-center justify-center md:justify-start my-2 font-bold capitalize cursor-pointer outline-none border-none px-4 py-1 text-xs md:text-base transition-colors rounded-3xl hover:bg-red category-btn ${cat.name === selectedCategory ? 'bg-red' : ''} `}
+        <button key={index} className={`flex items-center justify-center md:justify-start my-2 font-bold capitalize cursor-pointer outline-none border-none px-4 py-1 sm:py-2 text-xs md:text-base lg:text-lg transition-colors rounded-3xl hover:bg-red category-btn ${cat.name === selectedCategory ? 'bg-red' : ''} `}
         onClick={() => setSelectedCategory(cat.name)}
         >
           <span className={`md:mr-4 ${cat.name === selectedCategory ? 'text-white' : 'text-red'}`}>{cat.icon}</span>

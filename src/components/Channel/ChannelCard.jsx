@@ -13,7 +13,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      width: { xs: "356px", md: "320px" },
+      width:{ xs: '250px', md: "250px", lg:"370px" },
       height: "326px",
       margin: "auto",
       marginTop: marginTop,
@@ -25,6 +25,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+          alignItems: "center",
           textAlign: "center",
           color: "#fff",
         }}
@@ -42,17 +43,26 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
             border: "1px solid #e3e3e3",
           }}
         />
-        <Typography variant="h6" fontWeight="bold">
+        <Typography
+          variant="h6"
+          fontWeight="bold"
+        >
           {channelDetail?.snippet?.title}
-          <CheckCircleIcon className="ml-6 text-gray-600 text-gray" sx={{fontSize: 14}}/>
+          <CheckCircleIcon
+            className=" text-gray-600 text-gray"
+            sx={{ fontSize: 14, ml: '8px' }}
+          />
         </Typography>
+
         {/* Display on channel page */}
         {channelDetail?.statistics?.subscriberCount && (
-          <Typography sx={{display: "flex", justifyContent: 'center', mr: '2.5rem'}}>
-            {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString()} Subscribers
+          <Typography>
+            {parseInt(
+              channelDetail?.statistics?.subscriberCount
+            ).toLocaleString()}{" "}
+            Subscribers
           </Typography>
         )}
-
       </CardContent>
     </Link>
   </Box>

@@ -24,14 +24,14 @@ const ChannelDetail = () => {
   }, [id]);
 
   return (
-    <Box minHeight="95vh">
+    <Box minHeight="95vh" >
       <Box>
-        <div className="linear-gradient h-[300px] z-10" />
+        <div className="linear-gradient h-[150px] md:h-[300px] z-10" />
         <ChannelCard channelDetail={channelDetail} marginTop="-110px" />
       </Box>
-      <Box display="flex" p="2">
-        <Box sx={{ mr: { sm: "100px" } }}/>
-          <Videos videos={videos} />
+      <Box sx={{margin: '0 0.5rem'}}>
+          <Videos videos={videos} justifyContent="space-evenly" />
+
       </Box>
     </Box>
   );
