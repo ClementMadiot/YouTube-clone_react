@@ -1,8 +1,22 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // @mui import
+import { styled } from '@mui/material/styles';
 import { Paper, IconButton } from "@mui/material";
 import { Search } from "@mui/icons-material";
+
+const StyledPaper = styled(Paper)(({ theme }) => ({
+  '& .MuiFormLabel-root': {
+    // Styles pour le label à l'intérieur du formulaire
+  },
+  '& .MuiFormControl-root': {
+    // Styles pour le FormControl à l'intérieur du formulaire
+  },
+  '&:focus-within': {
+    // Styles à appliquer lorsque le focus est à l'intérieur du Paper
+    border: '1px solid #065fd4', // Bordure bleue marine de 2px
+  },
+}));
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -18,25 +32,27 @@ const SearchBar = () => {
     }
   };
   return (
-    <Paper
+    <StyledPaper
       component="form"
       onSubmit={handleSubmit}
-      className=" shadow-none border border-[#e3e3e3]"
+      className=" shadow-none border "
       sx={{
         borderRadius: 20,
         pl: 2,
         mr: { sm: 5 },
+        background: 'hsl(0,0%,7%)',
+        borderColor: 'hsl(0,0%,18.82%)'
       }}
     >
       <input 
       placeholder="Search..." 
       value={searchTerm} 
       onChange={(e) => setSearchTerm(e.target.value)} 
-      className="outline-none border-none sm:w-[350px] w-[200px]" />
-      <IconButton type="submit" sx={{p:'10px', color:'red'}}>
+      className="outline-none border-none sm:w-[320px] w-[170px] vsm:w-[200px] placeholder-gray bg-lightBlack text-white" />
+      <IconButton type="submit" sx={{p:'8px 15px', color:'#a0a0a0', background:'#3f3f3f78', borderRadius: '0 21px 21px 0'}}>
       <Search/>
       </IconButton>
-    </Paper>
+    </StyledPaper>
   );
 };
 

@@ -2,23 +2,22 @@
 import plugin from "tailwindcss/plugin";
 
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: '#0F0F0F',
-        borderRight: '#3d3d3d',
-        red: '#FC1503',
-        cardContent: '#1e1e1e',
-        gray:'#a0a0a0',
-      }
+        primary: "#0F0F0F",
+        borderRight: "#3d3d3d",
+        red: "#FC1503",
+        cardContent: "#1e1e1e",
+        gray: "#a0a0a0",
+        lightBlack: 'hsl(0,0%,7%)'
+      },
+      screens: {
+        vsm: "425px",
+        xs: "900px",
+      },
     },
-    screen:{
-      xs:'900px'
-    }
   },
   plugins: [
     plugin(function ({ addBase, addComponents, addUtilities }) {
@@ -34,8 +33,7 @@ export default {
         },
         // color text gradient
         ".linear-gradient": {
-          "@apply bg-gradient-to-r from-fuchsia-500 to-cyan-500":
-            {},
+          "@apply bg-gradient-to-r from-fuchsia-500 to-cyan-500": {},
         },
       });
       addUtilities({
@@ -45,5 +43,4 @@ export default {
       });
     }),
   ],
-}
-
+};

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Typography, CardContent, CardMedia } from "@mui/material";
-import CheckCircle from "@mui/icons-material/CheckCircle";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import { demoProfilePicture } from "../../utils/constants";
 
@@ -44,7 +44,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
         />
         <Typography variant="h6" fontWeight="bold">
           {channelDetail?.snippet?.title}
-          <CheckCircle className="ml-6 text-gray-600 text-gray" sx={{fontSize: 14}}/>
+          <CheckCircleIcon className="ml-6 text-gray-600 text-gray" sx={{fontSize: 14}}/>
         </Typography>
         {/* Display on channel page */}
         {channelDetail?.statistics?.subscriberCount && (

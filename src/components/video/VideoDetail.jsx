@@ -46,7 +46,7 @@ const VideoDetail = () => {
           >
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
-              className="!h-[77vh] !w-full"
+              className="!w-full lg:!h-[67vh] xl:!h-[77vh]"
               controls
             />
             {/* Title */}
@@ -93,8 +93,8 @@ const VideoDetail = () => {
             </Stack>
           </Box>
         </Box>
+        
         {/* side videos  */}
-
         <Box
           px={2}
           py={{ md: 1, xs: 5 }}
