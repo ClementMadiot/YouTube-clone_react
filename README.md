@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="" target="_blanck"><img src="./src/assets/youtube-screen.png" alt="Modern Youtube"></a>
+  <a href="modernyoutubecm.netlify.app" target="_blanck"><img src="./src/assets/youtube-screen.png" alt="Modern Youtube"></a>
   <h3 align="center">Modern Youtube</h3>
 </div>
 
